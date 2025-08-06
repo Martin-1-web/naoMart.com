@@ -1,0 +1,42 @@
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section brand">
+      <h2>naoMart</h2>
+      <p>&copy; 2025 All rights reserved.</p>
+    </div>
+
+    <div class="footer-section links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a routerLink="/home">Home</a></li>
+        <li><a routerLink="/courses">Courses</a></li>
+        <li><a routerLink="/about">About</a></li>
+        <li><a routerLink="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section newsletter">
+      <h4>Subscribe to Our Newsletter</h4>
+      <p>Stay updated with our latest news and features.</p>
+
+    <form #formFooter="ngForm" (ngSubmit)="onSubmit()">
+        <input
+            type="email"
+            name="email"
+            placeholder="Your email address"
+            pattern="[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]{3,}"
+            title="Please enter a valid email address (e.g., user@example.com)"
+            required [(ngModel)]="emailModel.email"
+        />
+
+        <button type="submit" [disabled]="!formFooter.valid">Subscribe</button>
+    </form>
+
+
+    @if (errorMsg) {
+      <p>{{errorMsg}}</p>
+    }
+
+    </div>
+  </div>
+</footer>

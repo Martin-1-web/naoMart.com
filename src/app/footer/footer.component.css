@@ -1,0 +1,123 @@
+.footer {
+  background: linear-gradient(90deg, #fcb69f 0%, #ffecd2 100%);
+  color: #333;
+  padding: 2rem 1rem;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+  font-size: 0.95rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+  min-width: 250px;
+}
+
+.footer-section h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #222;
+}
+
+.brand h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.links li {
+  margin: 0.3rem 0;
+}
+
+.links a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.links a:hover {
+  color: #ff6b6b;
+}
+
+.newsletter p {
+  margin: 0.5rem 0 1rem;
+}
+
+.newsletter form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.newsletter input {
+  flex: 1 1 200px;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.newsletter button {
+  padding: 0.6rem 1.2rem;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+/* .newsletter button:hover {
+  background-color: #ff4d4d;
+} */
+
+
+button[disabled] {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background-color: #ccc;
+  color: #666;
+}
+
+button:not([disabled]) {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.error {
+  color: #e63946;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .newsletter form {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .newsletter input,
+  .newsletter button {
+    width: 100%;
+  }
+}

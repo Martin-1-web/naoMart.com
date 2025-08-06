@@ -1,0 +1,19 @@
+<form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+    {{errorMsg}}
+    <div class="input-box">
+         <span><i class="fa fa-user-o"></i></span>
+        <input type="text" placeholder="User Name" required name="userName" [(ngModel)]="userModel.name">
+    </div>
+
+    <div class="input-box">
+        <span><i class="fa fa-envelope-o"></i></span>
+        <input type="email" placeholder="Email Id" required name="userEmail" [(ngModel)]="userModel.email">
+    </div>
+
+    <div class="input-box">
+        <span><i class="fa fa-key"></i></span>
+        <input type="password" placeholder="Password" required name="userPassword" [(ngModel)]="userModel.password">
+    </div>
+    
+    <button type="submit"><i class="fa fa-sign-in"></i>Register</button>
+</form>

@@ -1,0 +1,43 @@
+.features-page {
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  padding: 4rem 1rem;
+  font-size: 1.1rem;
+}
+
+.features-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.feature-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-top: 2.5rem;
+}
+
+.feature-card {
+  background: #fafafa;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+}
+
+.feature-card h3 {
+  /* color: #2d3142; */
+  color: #673AB7;
+
+  margin-bottom: 0.75rem;
+}
+
+.feature-card p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+}

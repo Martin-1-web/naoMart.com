@@ -1,0 +1,18 @@
+<nav class="navbar">
+
+  <div class="logo">naoMart</div>
+
+  <div class="menu-icon" (click)="toggleMenu()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+
+  <ul [class.active]="isMenuOpen">
+
+    <li><a routerLink="/home" (click)="closeMenu()">Home</a></li>
+    <li><a routerLink="/courses" (click)="closeMenu()">Courses</a></li>
+    <li><a routerLink="/about" (click)="closeMenu()">About</a></li>
+    <li><a routerLink="/contact" (click)="closeMenu()">Contact</a></li>
+  </ul>
+</nav>
