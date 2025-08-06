@@ -17,14 +17,11 @@ import { filter } from 'rxjs';
 export class AppComponent {
   title = 'demo';
 
-  constructor(private swUpdate: SwUpdate) {
+   constructor(private swUpdate: SwUpdate) {
     if (this.swUpdate.isEnabled) {
       this.swUpdate.versionUpdates
         .pipe(
-          filter(
-            (event): event is VersionReadyEvent =>
-              event.type === 'VERSION_READY'
-          )
+          filter((evt): evt is VersionReadyEvent => evt.type === 'VERSION_READY')
         )
         .subscribe(() => {
           window.location.reload();
