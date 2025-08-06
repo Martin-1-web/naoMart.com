@@ -22,14 +22,12 @@ export class AppComponent {
       this.swUpdate.versionUpdates
         .pipe(
           filter(
-            (evt): evt is VersionReadyEvent =>
-              evt.type === 'VERSION_READY'
+            (event): event is VersionReadyEvent =>
+              event.type === 'VERSION_READY'
           )
         )
         .subscribe(() => {
-          if (confirm('A new version is available. Load it?')) {
-            window.location.reload();
-          }
+          window.location.reload();
         });
     }
   }
