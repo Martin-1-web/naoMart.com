@@ -1,10 +1,11 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { TestComponent } from "./test/test.component";
 import { HomeComponent } from "./home/home.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { FooterComponent } from "./footer/footer.component";
 import { RouterOutlet } from '@angular/router';
-import { SwUpdate } from '@angular/service-worker';
+import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -17,13 +18,19 @@ export class AppComponent {
   title = 'demo';
 
   constructor(private swUpdate: SwUpdate) {
-
-    if(this.swUpdate.isEnabled) {
-      this.swUpdate.versionUpdates.subscribe(() => {
-        if(confirm('A new version is available. Load it')) {
-          window.location.reload()
-        }
-      })
+    if (this.swUpdate.isEnabled) {
+      this.swUpdate.versionUpdates
+        .pipe(
+          filter(
+            (evt): evt is VersionReadyEvent =>
+              evt.type === 'VERSION_READY'
+          )
+        )
+        .subscribe(() => {
+          if (confirm('A new version is available. Load it?')) {
+            window.location.reload();
+          }
+        });
     }
   }
 }
