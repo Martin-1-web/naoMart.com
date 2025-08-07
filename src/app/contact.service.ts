@@ -9,7 +9,7 @@ import { catchError, Observable, throwError } from 'rxjs';
 export class ContactService {
 
   private http = inject(HttpClient)
-  private url: string = 'https://1angularhttpclient-5d604-default-rtdb.firebaseio.com/contact.json'
+  private url: string = 'http://localhost:8080/contact'
 
   public sendContactData(userContact: UserContact) {
 

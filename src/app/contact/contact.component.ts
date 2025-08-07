@@ -25,6 +25,8 @@ export class ContactComponent {
 
     this._contactService.sendContactData(this.contactModel).subscribe({next: (data) => {console.log('Success: ', data);}, 
     error: (err) => {console.log('ERROR: ', this.errorMsg = err)}})
+
+    alert('Succefully sent')
   }
 
 }
